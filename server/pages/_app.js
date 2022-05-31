@@ -175,9 +175,10 @@ function NavBar(props) {
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx((FlutterDash_default()), {
                                         color: "secondary",
-                                        fontSize: "large",
                                         sx: {
-                                            marginRight: "10px"
+                                            marginRight: "10px",
+                                            width: "48px",
+                                            height: "48px"
                                         }
                                     }),
                                     " Analytics"
@@ -226,7 +227,9 @@ function NavBar(props) {
                                                     color: "secondary",
                                                     fontSize: "large",
                                                     sx: {
-                                                        marginRight: "10px"
+                                                        marginRight: "10px",
+                                                        width: "48px",
+                                                        height: "48px"
                                                     }
                                                 }),
                                                 " Analytics"
