@@ -98,7 +98,7 @@ export default function NavBar(props: Props) {
                 <Box sx={{display: 'flex'}}>
                     <Box sx={{width: drawerWidth, height: headerHeight, display: {xs: 'none', md: 'flex'}, alignItems: 'center', justifyContent: 'center', borderRight: '1px solid'}}>
                         <Typography variant="h6" noWrap component="div" sx={{display: 'flex', alignItems: 'center'}}>
-                            <FlutterDashIcon color="secondary" fontSize="large" sx={{marginRight: '10px'}}/> Analytics
+                            <FlutterDashIcon color="secondary" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
                         </Typography>
                     </Box>
                     <Toolbar sx={{height: headerHeight, flexGrow: 1, justifyContent: 'space-between'}} id="back-to-top-anchor">
@@ -107,7 +107,7 @@ export default function NavBar(props: Props) {
                                 <MenuIcon/>
                             </IconButton>
                             <Typography variant="h6" noWrap component="div" sx={{display: 'flex', alignItems: 'center'}}>
-                                <FlutterDashIcon color="secondary" fontSize="large" sx={{marginRight: '10px'}}/> Analytics
+                                <FlutterDashIcon color="secondary" fontSize="large" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
                             </Typography>
                         </Box>
                         <Typography variant="h6" noWrap component="div" sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
