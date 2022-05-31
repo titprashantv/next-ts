@@ -10,6 +10,7 @@ import FlutterDashIcon from '@mui/icons-material/FlutterDash';
 
 const headerHeight = 64;
 const drawerWidth = 240;
+const prefix = '/next-ts';
 
 interface Props {
     window?: () => Window;
@@ -117,7 +118,7 @@ export default function NavBar(props: Props) {
                         <Box sx={{flexGrow: 0}}>
                             <IconButton onClick={handleUserProfileToggle()} sx={{p: 0}}>
                                 <StyledBadge overlap="circular" anchorOrigin={{vertical: 'bottom', horizontal: 'right'}} variant="dot">
-                                    <Avatar alt="Remy Sharp" src="/static/avatar.jpg"/>
+                                    <Avatar alt="Remy Sharp" src={prefix + '/static/avatar.jpg'}/>
                                 </StyledBadge>
                             </IconButton>
                         </Box>

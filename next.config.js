@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
+    reactStrictMode: true,
+    basePath: '/next-ts',
+    assetPrefix: '/next-ts',
 };
