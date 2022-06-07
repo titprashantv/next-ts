@@ -4,6 +4,7 @@ import {useRouter} from 'next/router'
 import Link from 'next/link'
 import {ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import NavIcon from "./NavIcon";
+import {minWidth} from "@mui/system";
 
 interface Props {
     menuName: string;
@@ -41,7 +42,7 @@ const ActiveLink = (props: Props) => {
     return (
         <Link href={href} key={menuName}>
             <ListItemButton className={activeClass}>
-                <ListItemIcon>
+                <ListItemIcon sx={{minWidth: 36}}>
                     <NavIcon icon={menuIcon}/>
                 </ListItemIcon>
                 <ListItemText primary={menuName}/>
