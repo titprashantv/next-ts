@@ -11,7 +11,7 @@ export default function MyApp(props: AppProps) {
         <div>
             <Head>
                 <meta name="viewport" content="initial-scale=1, width=device-width"/>
-                <title>Dashboard</title>
+                <title>Dashboard | Analytics</title>
             </Head>
             <ThemeProvider theme={theme}>
                 <Box sx={{display: 'flex'}}>

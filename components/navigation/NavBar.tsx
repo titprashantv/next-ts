@@ -1,16 +1,12 @@
 import * as React from 'react';
-import {
-    styled, AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography, Tooltip, Avatar, Menu,
-    MenuItem, Badge, Button
-} from '@mui/material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import FlutterDashIcon from '@mui/icons-material/FlutterDash';
+import {styled, AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography, Avatar, Badge} from '@mui/material';
+import {MoveToInbox, Mail, FlutterDash, Menu} from '@mui/icons-material';
+import Link from 'next/link'
+import MainMenu from './MainMenu'
+import NavIcon from './NavIcon'
 
 const headerHeight = 64;
 const drawerWidth = 240;
-const prefix = '/next-ts';
 
 interface Props {
     window?: () => Window;
@@ -63,14 +59,16 @@ export default function NavBar(props: Props) {
     const sideBar = (
         <div>
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
-                            </ListItemIcon>
-                            <ListItemText primary={text}/>
-                        </ListItemButton>
+                {MainMenu.map((row, index) => (
+                    <ListItem key={row.name} disablePadding>
+                        <Link href={row.path}>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <NavIcon icon={row.icon}/>
+                                </ListItemIcon>
+                                <ListItemText primary={row.name}/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
@@ -80,7 +78,7 @@ export default function NavBar(props: Props) {
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                                {index % 2 === 0 ? <MoveToInbox/> : <Mail/>}
                             </ListItemIcon>
                             <ListItemText primary={text}/>
                         </ListItemButton>
@@ -99,16 +97,16 @@ export default function NavBar(props: Props) {
                 <Box sx={{display: 'flex'}}>
                     <Box sx={{width: drawerWidth, height: headerHeight, display: {xs: 'none', md: 'flex'}, alignItems: 'center', justifyContent: 'center', borderRight: '1px solid'}}>
                         <Typography variant="h6" noWrap component="div" sx={{display: 'flex', alignItems: 'center'}}>
-                            <FlutterDashIcon color="secondary" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
+                            <FlutterDash color="secondary" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
                         </Typography>
                     </Box>
                     <Toolbar sx={{height: headerHeight, flexGrow: 1, justifyContent: 'space-between'}} id="back-to-top-anchor">
                         <Box sx={{width: drawerWidth, display: {xs: 'flex', md: 'none'}}}>
                             <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleSideBarToggle} sx={{display: {md: 'none'}}}>
-                                <MenuIcon/>
+                                <Menu/>
                             </IconButton>
                             <Typography variant="h6" noWrap component="div" sx={{display: 'flex', alignItems: 'center'}}>
-                                <FlutterDashIcon color="secondary" fontSize="large" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
+                                <FlutterDash color="secondary" fontSize="large" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
                             </Typography>
                         </Box>
                         <Typography variant="h6" noWrap component="div" sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
@@ -118,7 +116,7 @@ export default function NavBar(props: Props) {
                         <Box sx={{flexGrow: 0}}>
                             <IconButton onClick={handleUserProfileToggle()} sx={{p: 0}}>
                                 <StyledBadge overlap="circular" anchorOrigin={{vertical: 'bottom', horizontal: 'right'}} variant="dot">
-                                    <Avatar alt="Remy Sharp" src={prefix + '/static/avatar.jpg'}/>
+                                    <Avatar alt="Remy Sharp" src="/static/avatar.jpg"/>
                                 </StyledBadge>
                             </IconButton>
                         </Box>
@@ -142,7 +140,7 @@ export default function NavBar(props: Props) {
                             <ListItem key={text} disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                                        {index % 2 === 0 ? <MoveToInbox/> : <Mail/>}
                                     </ListItemIcon>
                                     <ListItemText primary={text}/>
                                 </ListItemButton>
@@ -155,7 +153,7 @@ export default function NavBar(props: Props) {
                             <ListItem key={text} disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
-                                        {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                                        {index % 2 === 0 ? <MoveToInbox/> : <Mail/>}
                                     </ListItemIcon>
                                     <ListItemText primary={text}/>
                                 </ListItemButton>
