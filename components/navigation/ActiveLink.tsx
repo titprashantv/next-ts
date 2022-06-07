@@ -4,7 +4,7 @@ import {useRouter} from 'next/router'
 import Link from 'next/link'
 import {ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import NavIcon from "./NavIcon";
-import {minWidth} from "@mui/system";
+import theme from "../../src/theme";
 
 interface Props {
     menuName: string;
@@ -22,7 +22,6 @@ const ActiveLink = (props: Props) => {
 
     useEffect(() => {
         // Check if the router fields are updated client-side
-
         if (isReady) {
             // Dynamic route will be matched via props.as
             // Static route will be matched via props.href
@@ -41,9 +40,12 @@ const ActiveLink = (props: Props) => {
 
     return (
         <Link href={href} key={menuName}>
-            <ListItemButton className={activeClass} sx={{color: '#ffffff', paddingTop: '4px', paddingBottom: '4px', backgroundColor: activeClass === 'active' ? '#ED254EFF' : '#17252A',
-                '&:hover': {color: '#ffffff', backgroundColor: '#ED254EFF'}}}>
-                <ListItemIcon sx={{minWidth: 36, color: '#ffffff'}}>
+            <ListItemButton className={activeClass} sx={{
+                color: theme.palette.primary.light, paddingTop: '4px', paddingBottom: '4px',
+                backgroundColor: activeClass === 'active' ? theme.palette.secondary.main : theme.palette.primary.main,
+                '&:hover': {color: theme.palette.primary.light, backgroundColor: theme.palette.secondary.main}
+            }}>
+                <ListItemIcon sx={{minWidth: 36, color: theme.palette.primary.light}}>
                     <NavIcon icon={menuIcon}/>
                 </ListItemIcon>
                 <ListItemText primary={menuName}/>

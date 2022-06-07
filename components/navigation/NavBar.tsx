@@ -3,10 +3,10 @@ import {styled, AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, Lis
 import {MoveToInbox, Mail, FlutterDash, Menu} from '@mui/icons-material';
 import MainMenu from "./MainMenu";
 import ActiveLink from "./ActiveLink";
+import theme from "../../src/theme";
 
 const headerHeight = 64;
-const drawerWidth = 240;
-const primaryColor = '#17252A';
+const drawerWidth = 225;
 
 interface Props {
     window?: () => Window;
@@ -78,8 +78,7 @@ export default function NavBar(props: Props) {
                 <Box sx={{display: 'flex'}}>
                     <Box sx={{
                         width: drawerWidth, height: headerHeight, display: {xs: 'none', md: 'flex'}, alignItems: 'center', justifyContent: 'center',
-                        borderRight: '1px solid rgba(255, 255, 255, 0.12)',
-                        borderBottom: '1px solid rgba(255, 255, 255, 0.12)'
+                        borderRight: '1px solid rgba(255, 255, 255, 0.12)', borderBottom: '1px solid rgba(255, 255, 255, 0.12)'
                     }}>
                         <Typography variant="h6" noWrap component="div" sx={{display: 'flex', alignItems: 'center'}}>
                             <FlutterDash color="secondary" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
@@ -112,14 +111,14 @@ export default function NavBar(props: Props) {
                 <Drawer container={container} variant="temporary" open={mobileOpen} onClose={handleSideBarToggle} ModalProps={{keepMounted: true}}
                         sx={{
                             display: {xs: 'block', md: 'none'},
-                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight, backgroundColor: primaryColor, border: 'none'}
+                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight, backgroundColor: theme.palette.primary.main, border: 'none'}
                         }}>
                     {sideBar}
                 </Drawer>
                 <Drawer variant="permanent" open
                         sx={{
                             display: {xs: 'none', md: 'block'},
-                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight, backgroundColor: primaryColor, border: 'none'}
+                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight, backgroundColor: theme.palette.primary.main, border: 'none'}
                         }}>
                     {sideBar}
                 </Drawer>
