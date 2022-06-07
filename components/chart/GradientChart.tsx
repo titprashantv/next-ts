@@ -2,35 +2,29 @@ import React, {useRef, useEffect, useState} from 'react';
 import type {ChartData, ChartArea} from 'chart.js';
 import {Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend} from 'chart.js';
 import {Chart} from 'react-chartjs-2';
-import faker from 'faker';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-const colors = ['red', 'orange', 'yellow', 'lime', 'green', 'teal', 'blue', 'purple'];
 
 const data = {
     labels,
     datasets: [
         {
             label: 'Dataset 1',
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [807, -728, 877, 712, -638, -689, -966],
         },
         {
             label: 'Dataset 2',
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [583, -78, -735, 754, -569, -422, -371],
         },
     ],
 };
 
 function createGradient(ctx: CanvasRenderingContext2D, area: ChartArea) {
-    const colorStart = faker.random.arrayElement(colors);
-    const colorMid = faker.random.arrayElement(
-        colors.filter(color => color !== colorStart)
-    );
-    const colorEnd = faker.random.arrayElement(
-        colors.filter(color => color !== colorStart && color !== colorMid)
-    );
+    const colorStart = 'orange';
+    const colorMid = 'green';
+    const colorEnd = 'purple';
 
     const gradient = ctx.createLinearGradient(0, area.bottom, 0, area.top);
 
@@ -64,6 +58,5 @@ export default function GradientChart() {
 
         setChartData(chartData);
     }, []);
-
     return <Chart ref={chartRef} type='line' data={chartData}/>;
 }

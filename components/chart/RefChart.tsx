@@ -1,7 +1,6 @@
 import React, {useRef, useEffect} from 'react';
 import {Chart as ChartJS, LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip} from 'chart.js';
 import {Chart} from 'react-chartjs-2';
-import faker from 'faker';
 
 ChartJS.register(LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip);
 
@@ -16,13 +15,13 @@ const data = {
             borderColor: 'rgb(255, 99, 132)',
             borderWidth: 2,
             fill: false,
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [791, 326, 732, -942, -339, -113, -657],
         },
         {
             type: 'bar' as const,
             label: 'Dataset 2',
             backgroundColor: 'rgb(75, 192, 192)',
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [204, 440, -364, -856, 9, -846, -128],
             borderColor: 'white',
             borderWidth: 2,
         },
@@ -30,7 +29,7 @@ const data = {
             type: 'bar' as const,
             label: 'Dataset 3',
             backgroundColor: 'rgb(53, 162, 235)',
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [565, -918, -223, -833, -110, 622, -601],
         },
     ],
 };
@@ -76,6 +75,6 @@ export default function RefChart() {
 
         triggerTooltip(chart);
     }, []);
-
+    console.log(data);
     return <Chart ref={chartRef} type='bar' data={data}/>;
 }

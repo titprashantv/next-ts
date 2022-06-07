@@ -1,7 +1,6 @@
 import React from 'react';
 import {Chart as ChartJS, LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip} from 'chart.js';
 import {Chart} from 'react-chartjs-2';
-import faker from 'faker';
 
 ChartJS.register(LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip);
 
@@ -16,13 +15,13 @@ const data = {
             borderColor: 'rgb(255, 99, 132)',
             borderWidth: 2,
             fill: false,
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [198, 881, -325, 650, -423, -730, -615],
         },
         {
             type: 'bar' as const,
             label: 'Dataset 2',
             backgroundColor: 'rgb(75, 192, 192)',
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [520, 281, 230, 201, 840, -834, 811],
             borderColor: 'white',
             borderWidth: 2,
         },
@@ -30,7 +29,7 @@ const data = {
             type: 'bar' as const,
             label: 'Dataset 3',
             backgroundColor: 'rgb(53, 162, 235)',
-            data: labels.map(() => faker.datatype.number({min: -1000, max: 1000})),
+            data: [401, -808, 214, -553, 605, 932, 713],
         },
     ],
 };
