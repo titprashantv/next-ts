@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {Dashboard, Group} from '@mui/icons-material';
 
-interface iconName {
-    icon: string
+interface Props {
+    icon: string;
 }
 
-const NavIcon = (props: iconName) => {
-    switch (props.icon) {
+const NavIcon = (props: Props) => {
+    const {icon} = props;
+    switch (icon) {
         case 'Dashboard':
             return <Dashboard/>;
         case 'Group':

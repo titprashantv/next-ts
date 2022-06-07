@@ -10,6 +10,7 @@ const drawerWidth = 240;
 
 interface Props {
     window?: () => Window;
+    pageTitle: string;
 }
 
 const StyledBadge = styled(Badge)(({theme}) => ({
@@ -41,7 +42,7 @@ const StyledBadge = styled(Badge)(({theme}) => ({
 }));
 
 export default function NavBar(props: Props) {
-    const {window} = props;
+    const {window, pageTitle} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [userProfileOpen, setUserProfileOpen] = React.useState(false);
 
@@ -110,7 +111,7 @@ export default function NavBar(props: Props) {
                             </Typography>
                         </Box>
                         <Typography variant="h6" noWrap component="div" sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
-                            Dashboard
+                            {pageTitle}
                         </Typography>
 
                         <Box sx={{flexGrow: 0}}>

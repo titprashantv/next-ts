@@ -1,23 +1,31 @@
 import * as React from 'react';
 import Head from 'next/head';
-import {Box, Toolbar} from '@mui/material';
+import {Box, CssBaseline, Toolbar} from '@mui/material';
+import NavBar from "./navigation/NavBar";
 
-interface TitleProps {
+interface Props {
     children?: React.ReactNode;
     pageTitle: string;
 }
 
-export default function Layout(props: TitleProps) {
+export default function Layout(props: Props) {
+    const {pageTitle, children} = props;
+
     return (
         <div>
             <Head>
                 <meta name="viewport" content="initial-scale=1, width=device-width"/>
-                <title>{props.pageTitle} | Analytics</title>
+                <title>{pageTitle} | Analytics</title>
             </Head>
-            <Box component="main" sx={{flexGrow: 1, p: 3}}>
-                <Toolbar/>
-                {props.children}
+            <Box sx={{display: 'flex'}}>
+                <NavBar pageTitle={pageTitle}/>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <CssBaseline/>
+                <Box component="main" sx={{flexGrow: 1, p: 3}}>
+                    <Toolbar/>
+                    {children}
+                </Box>
             </Box>
         </div>
     );
-}
+};
