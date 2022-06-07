@@ -8,6 +8,7 @@ const MainMenu = [
     {name: 'Reports', icon: 'InsertChart', path: '/reports'},
     {name: 'Careers', icon: 'Work', path: '/careers'},
     {name: 'Blogs', icon: 'Feed', path: '/blogs'},
+    {name: 'Logs', icon: 'Ballot', path: '/logs'},
     {name: 'Support Center', icon: 'SupportAgent', path: '/support'}
 ];
 export default MainMenu;
