@@ -6,6 +6,7 @@ import ActiveLink from "./ActiveLink";
 
 const headerHeight = 64;
 const drawerWidth = 240;
+const primaryColor = '#17252A';
 
 interface Props {
     window?: () => Window;
@@ -60,21 +61,8 @@ export default function NavBar(props: Props) {
         <div>
             <List>
                 {MainMenu.map((row, index) => (
-                    <ListItem key={row.name} disablePadding>
+                    <ListItem key={row.name} disablePadding sx={{marginBottom: '5px'}}>
                         <ActiveLink menuName={row.name} menuIcon={row.icon} href={row.path} as=""/>
-                    </ListItem>
-                ))}
-            </List>
-            <Divider/>
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <MoveToInbox/> : <Mail/>}
-                            </ListItemIcon>
-                            <ListItemText primary={text}/>
-                        </ListItemButton>
                     </ListItem>
                 ))}
             </List>
@@ -88,7 +76,11 @@ export default function NavBar(props: Props) {
             <CssBaseline/>
             <AppBar position="fixed">
                 <Box sx={{display: 'flex'}}>
-                    <Box sx={{width: drawerWidth, height: headerHeight, display: {xs: 'none', md: 'flex'}, alignItems: 'center', justifyContent: 'center', borderRight: '1px solid'}}>
+                    <Box sx={{
+                        width: drawerWidth, height: headerHeight, display: {xs: 'none', md: 'flex'}, alignItems: 'center', justifyContent: 'center',
+                        borderRight: '1px solid rgba(255, 255, 255, 0.12)',
+                        borderBottom: '1px solid rgba(255, 255, 255, 0.12)'
+                    }}>
                         <Typography variant="h6" noWrap component="div" sx={{display: 'flex', alignItems: 'center'}}>
                             <FlutterDash color="secondary" sx={{marginRight: '10px', width: '48px', height: '48px'}}/> Analytics
                         </Typography>
@@ -118,10 +110,17 @@ export default function NavBar(props: Props) {
             </AppBar>
             <Box component="nav" sx={{width: {md: drawerWidth}, flexShrink: {md: 0}}} aria-label="mailbox folders">
                 <Drawer container={container} variant="temporary" open={mobileOpen} onClose={handleSideBarToggle} ModalProps={{keepMounted: true}}
-                        sx={{display: {xs: 'block', md: 'none'}, '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight}}}>
+                        sx={{
+                            display: {xs: 'block', md: 'none'},
+                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight, backgroundColor: primaryColor, border: 'none'}
+                        }}>
                     {sideBar}
                 </Drawer>
-                <Drawer variant="permanent" sx={{display: {xs: 'none', md: 'block'}, '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight}}} open>
+                <Drawer variant="permanent" open
+                        sx={{
+                            display: {xs: 'none', md: 'block'},
+                            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, top: headerHeight, backgroundColor: primaryColor, border: 'none'}
+                        }}>
                     {sideBar}
                 </Drawer>
             </Box>

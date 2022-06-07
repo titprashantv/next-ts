@@ -41,8 +41,9 @@ const ActiveLink = (props: Props) => {
 
     return (
         <Link href={href} key={menuName}>
-            <ListItemButton className={activeClass}>
-                <ListItemIcon sx={{minWidth: 36}}>
+            <ListItemButton className={activeClass} sx={{color: '#ffffff', paddingTop: '4px', paddingBottom: '4px', backgroundColor: activeClass === 'active' ? '#ED254EFF' : '#17252A',
+                '&:hover': {color: '#ffffff', backgroundColor: '#ED254EFF'}}}>
+                <ListItemIcon sx={{minWidth: 36, color: '#ffffff'}}>
                     <NavIcon icon={menuIcon}/>
                 </ListItemIcon>
                 <ListItemText primary={menuName}/>
