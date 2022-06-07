@@ -22,6 +22,26 @@ export default function Home() {
     return (
         <Layout pageTitle="Dashboard">
             <Grid container spacing={2}>
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <PieChart/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <DoughnutChart/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <PolarAreaChart/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <RadarChart/>
+                    </Paper>
+                </Grid>
                 <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <VerticalBarChart/>
@@ -53,53 +73,32 @@ export default function Home() {
                         <MultiaxisLineChart/>
                     </Paper>
                 </Grid>
-
-                <Grid item xs={3}>
-                    <Paper elevation={5} sx={{padding: '24px'}}>
-                        <PieChart/>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper elevation={5} sx={{padding: '24px'}}>
-                        <DoughnutChart/>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper elevation={5} sx={{padding: '24px'}}>
-                        <PolarAreaChart/>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper elevation={5} sx={{padding: '24px'}}>
-                        <RadarChart/>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <ScatterChart/>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <BubbleChart/>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <MultitypeChart/>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <EventChart/>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <RefChart/>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <GradientChart/>
                     </Paper>
