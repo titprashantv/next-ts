@@ -57,7 +57,6 @@ export default function Home() {
                         <StackedBarChart/>
                     </Paper>
                 </Grid>
-
                 <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <GroupedBarChart/>
