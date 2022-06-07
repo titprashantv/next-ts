@@ -75,6 +75,6 @@ export default function RefChart() {
 
         triggerTooltip(chart);
     }, []);
-    console.log(data);
+
     return <Chart ref={chartRef} type='bar' data={data}/>;
 }
