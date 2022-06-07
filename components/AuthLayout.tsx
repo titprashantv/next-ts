@@ -17,8 +17,10 @@ export default function AuthLayout(props: Props) {
                 <meta name="viewport" content="initial-scale=1, width=device-width"/>
                 <title>{pageTitle} | Analytics</title>
             </Head>
-            <Box sx={{display: 'flex', backgroundColor: theme.palette.primary.main, height: '100vh'}}>
-                {children}
+            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: theme.palette.primary.main, height: '100vh'}}>
+                <div className="auth-box">
+                    {children}
+                </div>
             </Box>
         </div>
     );
