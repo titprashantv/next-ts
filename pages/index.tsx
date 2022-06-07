@@ -6,6 +6,11 @@ import HorizontalBarChart from "../components/chart/HorizontalBarChart";
 import StackedBarChart from "../components/chart/StackedBarChart";
 import GroupedBarChart from "../components/chart/GroupedBarChart";
 import LineChart from "../components/chart/LineChart";
+import MultiaxisLineChart from "../components/chart/MultiaxisLineChart";
+import PieChart from "../components/chart/PieChart";
+import DoughnutChart from "../components/chart/DoughnutChart";
+import PolarAreaChart from "../components/chart/PolarAreaChart";
+import RadarChart from "../components/chart/RadarChart";
 
 export default function Home() {
     return (
@@ -26,6 +31,7 @@ export default function Home() {
                         <StackedBarChart/>
                     </Paper>
                 </Grid>
+
                 <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <GroupedBarChart/>
@@ -34,6 +40,32 @@ export default function Home() {
                 <Grid item xs={4}>
                     <Paper elevation={5} sx={{padding: '24px'}}>
                         <LineChart/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={4}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <MultiaxisLineChart/>
+                    </Paper>
+                </Grid>
+            
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <PieChart/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <DoughnutChart/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <PolarAreaChart/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper elevation={5} sx={{padding: '24px'}}>
+                        <RadarChart/>
                     </Paper>
                 </Grid>
             </Grid>
