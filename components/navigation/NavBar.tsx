@@ -1,9 +1,8 @@
 import * as React from 'react';
 import {styled, AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography, Avatar, Badge} from '@mui/material';
 import {MoveToInbox, Mail, FlutterDash, Menu} from '@mui/icons-material';
-import Link from 'next/link'
-import MainMenu from './MainMenu'
-import NavIcon from './NavIcon'
+import MainMenu from "./MainMenu";
+import ActiveLink from "./ActiveLink";
 
 const headerHeight = 64;
 const drawerWidth = 240;
@@ -62,14 +61,7 @@ export default function NavBar(props: Props) {
             <List>
                 {MainMenu.map((row, index) => (
                     <ListItem key={row.name} disablePadding>
-                        <Link href={row.path}>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <NavIcon icon={row.icon}/>
-                                </ListItemIcon>
-                                <ListItemText primary={row.name}/>
-                            </ListItemButton>
-                        </Link>
+                        <ActiveLink menuName={row.name} menuIcon={row.icon} href={row.path} as=""/>
                     </ListItem>
                 ))}
             </List>

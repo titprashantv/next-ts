@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Dashboard, Group} from '@mui/icons-material';
+import {Dashboard, Group, InsertChart} from '@mui/icons-material';
 
 interface Props {
     icon: string;
@@ -12,6 +12,8 @@ const NavIcon = (props: Props) => {
             return <Dashboard/>;
         case 'Group':
             return <Group/>;
+        case 'InsertChart':
+            return <InsertChart/>;
         default:
             return <Dashboard/>;
     }
