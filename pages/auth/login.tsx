@@ -10,15 +10,13 @@ import {width} from "@mui/system";
 export default function Login() {
 
     const [values, setValues] = useState({
-        amount: '',
+        username: '',
         password: '',
-        weight: '',
-        weightRange: '',
         showPassword: false,
     });
 
-    const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValues({...values, [prop]: event.target.value});
+    const handleChange = (name) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValues({...values, [name]: event.target.value});
     };
 
     const handleClickShowPassword = () => {
@@ -44,8 +42,8 @@ export default function Login() {
             <div className="auth-fields">
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <TextField type="text" name="username" label="Username or Email *" fullWidth size="small" error={false}
-                                   helperText=" "
+                        <TextField type="text" name="username" label="Username or Email *" value={values.username} fullWidth size="small" error={false}
+                                   helperText=" " onChange={handleChange('username')}
                                    InputProps={{
                                        startAdornment: <InputAdornment position="start"><Email/></InputAdornment>,
                                    }}
