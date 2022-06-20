@@ -70,10 +70,10 @@ const theme = createTheme({
             },
             MuiSvgIcon: {
                 styleOverrides: {
-                    root: {
+                    colorPrimary: {
                         color: '#17252A',
                     },
-                    colorPrimary: {
+                    colorAction: {
                         color: '#17252A',
                         '&:hover': {
                             color: '#ED254EFF'
