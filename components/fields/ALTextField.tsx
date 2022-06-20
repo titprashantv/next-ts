@@ -8,11 +8,13 @@ interface Props {
     name: string;
     label: string;
     value: string;
+    error: boolean;
+    helperText: string;
 }
 
 export default function ALTextField(props: Props) {
 
-    const {name, label, value} = props;
+    const {name, label, value, error, helperText} = props;
 
     const [values, setValues] = useState({
         userName: '',
@@ -29,11 +31,8 @@ export default function ALTextField(props: Props) {
     };
 
     return (
-        <TextField type="text" name={name} label={label} value={value} fullWidth size="small" error={false}
-                   helperText=" " onChange={handleChange}
-                   InputProps={{
-                       startAdornment: <InputAdornment position="start"><Email color="primary"/></InputAdornment>,
-                   }}
+        <TextField type="text" name={name} label={label} value={value} error={error} helperText={helperText} onChange={handleChange} fullWidth size="small"
+                   InputProps={{startAdornment: <InputAdornment position="start"><Email color="primary"/></InputAdornment>}}
         />
     );
 };

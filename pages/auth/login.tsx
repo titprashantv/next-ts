@@ -33,7 +33,7 @@ export default function Login() {
             <div className="auth-fields">
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <ALTextField name="userName" label="Username or Email *" value={values.userName}/>
+                        <ALTextField name="userName" label="Username or Email *" value={values.userName} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>
