@@ -6,7 +6,7 @@
   box-shadow: $box-shadow;
   width: 100%;
   max-width: 1200px;
-  min-height: 540px;
+  min-height: 560px;
 
   @media (max-width: 1280px) {
     max-width: 1000px;
@@ -21,7 +21,7 @@
   .auth-bg {
     display: grid;
     width: 50%;
-    min-height: 540px;
+    min-height: 560px;
     box-shadow: $box-shadow;
     @media (max-width: 991px) {
       width: 40%;
@@ -48,12 +48,12 @@
     }
     @media (max-width: 767px) {
       width: 100%;
-      padding: 24px;
+      padding: 20px;
     }
 
     .auth-form {
       width: 400px;
-      margin-top: 24px;
+      margin-top: 20px;
       border-radius: $borderRadiusForm;
       background: $primaryLight;
       box-shadow: $box-shadow;
@@ -71,7 +71,7 @@
       }
 
       .auth-fields {
-        margin: 32px 24px;
+        margin: 40px 20px;
       }
     }
   }

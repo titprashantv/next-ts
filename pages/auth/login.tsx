@@ -4,6 +4,7 @@ import theme from "../../src/theme";
 import {Typography, TextField, Grid, Button, InputAdornment, IconButton} from '@mui/material';
 import {Email, Lock, Visibility, VisibilityOff} from '@mui/icons-material';
 import AuthLayout from "../../components/AuthLayout";
+import ALTextField from "../../components/fields/ALTextField";
 
 export default function Login() {
 
@@ -31,6 +32,10 @@ export default function Login() {
 
             <div className="auth-fields">
                 <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <ALTextField name="userName" label="Username or Email *" value={values.userName}/>
+                    </Grid>
+
                     <Grid item xs={12}>
                         <TextField type="text" name="userName" label="Username or Email *" value={values.userName} fullWidth size="small" error={false}
                                    helperText=" " onChange={handleChange}
