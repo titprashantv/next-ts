@@ -19,7 +19,14 @@ export default function AuthLayout(props: Props) {
             </Head>
             <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: theme.palette.primary.main, height: '100vh'}}>
                 <div className="auth-box">
-                    {children}
+                    <div className="auth-bg">
+                        <img src="/static/login.jpg"/>
+                    </div>
+                    <div className="auth-form-box">
+                        <div className="auth-form">
+                            {children}
+                        </div>
+                    </div>
                 </div>
             </Box>
         </div>

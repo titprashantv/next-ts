@@ -1,17 +1,77 @@
 import * as React from 'react';
-import {Typography} from '@mui/material';
+import {Typography, TextField, Grid, Button, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton} from '@mui/material';
+import {Email, Lock, Visibility, VisibilityOff} from '@mui/icons-material';
 import AuthLayout from "../../components/AuthLayout";
+import theme from "../../src/theme";
+import {useState} from "react";
+import {width} from "@mui/system";
+
 
 export default function Login() {
+
+    const [values, setValues] = useState({
+        amount: '',
+        password: '',
+        weight: '',
+        weightRange: '',
+        showPassword: false,
+    });
+
+    const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValues({...values, [prop]: event.target.value});
+    };
+
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
+
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
+
+
     return (
         <AuthLayout pageTitle="Login">
-            <Typography paragraph>
-                Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac tincidunt.
-                Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed vulputate odio.
-                Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant morbi
-                tristique senectus et. Adipiscing elit duis tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas accumsan lacus vel facilisis.
-                Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
+            <div className="auth-title">
+                <Typography variant="h1" sx={{color: theme.palette.secondary.dark}}>
+                    Login
+                </Typography>
+            </div>
+
+            <div className="auth-fields">
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <TextField type="text" name="username" label="Username or Email *" fullWidth size="small" error={false}
+                                   helperText=" "
+                                   InputProps={{
+                                       startAdornment: <InputAdornment position="start"><Email/></InputAdornment>,
+                                   }}
+                        />
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <TextField type={values.showPassword ? 'text' : 'password'} name="passWord" label="Password *" value={values.password} onChange={handleChange('password')}
+                                   fullWidth size="small" error={false}
+                                   helperText=" "
+                                   InputProps={{
+                                       startAdornment: <InputAdornment position="start"><Lock/></InputAdornment>,
+                                       endAdornment: (
+                                           <InputAdornment position="end">
+                                               <IconButton onClick={handleClickShowPassword}>{values.showPassword ? <Visibility color="primary"/> : <VisibilityOff color="primary"/>}</IconButton>
+                                           </InputAdornment>
+                                       ),
+                                   }}
+                        />
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <Button variant="contained" sx={{width: '100%'}}>Login</Button>
+                    </Grid>
+                </Grid>
+            </div>
         </AuthLayout>
     );
 };
