@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {useState} from "react";
 import theme from "../../src/theme";
-import {Typography, TextField, Grid, Button, InputAdornment, IconButton} from '@mui/material';
-import {Email, Lock, Visibility, VisibilityOff} from '@mui/icons-material';
+import {Typography, Grid, Button} from '@mui/material';
 import AuthLayout from "../../components/AuthLayout";
 import ALTextField from "../../components/fields/ALTextField";
 
@@ -39,27 +38,17 @@ export default function Login() {
 
                     <Grid item xs={12}>
                         <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
-                                     inputAdornment={{'isShow': true, 'position': 'start'}} error={true} helperText={' '}/>
+                                     inputAdornment={{'isShow': true, 'type': 'start'}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>
                         <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
-                                     inputAdornment={{'isShow': true, 'position': 'end'}} error={true} helperText={' '}/>
+                                     inputAdornment={{'isShow': true, 'type': 'end'}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>
-                        <TextField type={values.showPassword ? 'text' : 'password'} name="passWord" label="Password *" value={values.passWord} onChange={handleChange}
-                                   fullWidth size="small" error={false}
-                                   helperText=" "
-                                   InputProps={{
-                                       startAdornment: <InputAdornment position="start"><Lock color="primary"/></InputAdornment>,
-                                       endAdornment: (
-                                           <InputAdornment position="end">
-                                               <IconButton onClick={handleClickShowPassword}>{values.showPassword ? <Visibility color="action"/> : <VisibilityOff color="action"/>}</IconButton>
-                                           </InputAdornment>
-                                       ),
-                                   }}
-                        />
+                        <ALTextField type={values.showPassword ? 'text' : 'password'} name="passWord" label="Password *" value={values.passWord} onChange={handleChange}
+                                     inputAdornment={{'isShow': true, 'type': 'password', 'onClick': handleClickShowPassword, 'showPassword': values.showPassword}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>

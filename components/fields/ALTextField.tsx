@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {useState} from "react";
-import {TextField, InputAdornment} from '@mui/material';
+import {TextField, InputAdornment, IconButton} from '@mui/material';
 import {Email, Lock, Visibility, VisibilityOff} from '@mui/icons-material';
 
 interface Props {
@@ -18,19 +17,33 @@ export default function ALTextField(props: Props) {
     const {type, name, label, value, onChange, inputAdornment, error, helperText} = props;
 
     return (
-        <div>
+        <div className="al-text-field">
             {!inputAdornment.isShow &&
             <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
             />}
 
-            {inputAdornment.isShow && inputAdornment.position === 'start' &&
+            {inputAdornment.isShow && inputAdornment.type === 'start' &&
             <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
                        InputProps={{startAdornment: <InputAdornment position="start"><Email color="primary"/></InputAdornment>}}
             />}
 
-            {inputAdornment.isShow && inputAdornment.position === 'end' &&
+            {inputAdornment.isShow && inputAdornment.type === 'end' &&
             <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
                        InputProps={{endAdornment: <InputAdornment position="end"><Email color="primary"/></InputAdornment>}}
+            />}
+
+            {inputAdornment.isShow && inputAdornment.type === 'password' &&
+            <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
+                       InputProps={{
+                           startAdornment: <InputAdornment position="start"><Lock color="primary"/></InputAdornment>,
+                           endAdornment: (
+                               <InputAdornment position="end">
+                                   <IconButton onClick={inputAdornment.onClick}>
+                                       {inputAdornment.showPassword ? <VisibilityOff color="action"/> : <Visibility color="action"/>}
+                                   </IconButton>
+                               </InputAdornment>
+                           ),
+                       }}
             />}
         </div>
     );
