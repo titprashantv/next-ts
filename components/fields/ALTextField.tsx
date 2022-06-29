@@ -14,6 +14,15 @@ interface Props {
     helperText: string;
 }
 
+const MaterialIcon = (props: any) => {
+    switch (props.icon) {
+        case 'Email':
+            return <Email color="primary"/>;
+        default:
+            return null
+    }
+};
+
 export default function ALTextField(props: Props) {
     const {type, name, label, value, onChange, inputAdornment, error, helperText} = props;
 
@@ -31,12 +40,12 @@ export default function ALTextField(props: Props) {
 
             {inputAdornment.isShow && inputAdornment.type === 'start' &&
             <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
-                       InputProps={{startAdornment: <InputAdornment position="start"><Email color="primary"/></InputAdornment>}}/>
+                       InputProps={{startAdornment: <InputAdornment position="start"><MaterialIcon icon={inputAdornment.icon}/></InputAdornment>}}/>
             }
 
             {inputAdornment.isShow && inputAdornment.type === 'end' &&
             <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
-                       InputProps={{endAdornment: <InputAdornment position="end"><Email color="primary"/></InputAdornment>}}/>
+                       InputProps={{endAdornment: <InputAdornment position="end"><MaterialIcon icon={inputAdornment.icon}/></InputAdornment>}}/>
             }
 
             {inputAdornment.isShow && inputAdornment.type === 'password' &&
