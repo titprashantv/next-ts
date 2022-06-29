@@ -16,6 +16,10 @@ export default function Login() {
         setValues({...values, [event.target.name]: event.target.value});
     };
 
+    const handleSubmit = () => {
+      console.log('values',values);
+    };
+
     return (
         <AuthLayout pageTitle="Login">
             <div className="auth-title">
@@ -25,21 +29,23 @@ export default function Login() {
             </div>
 
             <div className="auth-fields">
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
-                                     inputAdornment={{'isShow': true, 'type': 'start', 'icon': 'Email'}} error={true} helperText={' '}/>
-                    </Grid>
+                <form>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                            <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
+                                         inputAdornment={{'isShow': true, 'type': 'start', 'icon': 'Email'}} error={true} helperText={' '}/>
+                        </Grid>
 
-                    <Grid item xs={12}>
-                        <ALTextField type="password" name="passWord" label="Password *" value={values.passWord} onChange={handleChange}
-                                     inputAdornment={{'isShow': true, 'type': 'password'}} error={true} helperText={' '}/>
-                    </Grid>
+                        <Grid item xs={12}>
+                            <ALTextField type="password" name="passWord" label="Password *" value={values.passWord} onChange={handleChange}
+                                         inputAdornment={{'isShow': true, 'type': 'password'}} error={true} helperText={' '}/>
+                        </Grid>
 
-                    <Grid item xs={12}>
-                        <Button variant="contained" sx={{width: '100%'}}>Login</Button>
+                        <Grid item xs={12}>
+                            <Button variant="contained" sx={{width: '100%'}} onClick={handleSubmit}>Login</Button>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </form>
             </div>
         </AuthLayout>
     );
