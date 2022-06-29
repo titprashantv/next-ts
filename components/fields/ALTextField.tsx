@@ -26,21 +26,22 @@ export default function ALTextField(props: Props) {
     return (
         <div className="al-text-field">
             {!inputAdornment.isShow &&
-            <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
-            />}
+            <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"/>
+            }
 
             {inputAdornment.isShow && inputAdornment.type === 'start' &&
             <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
-                       InputProps={{startAdornment: <InputAdornment position="start"><Email color="primary"/></InputAdornment>}}
-            />}
+                       InputProps={{startAdornment: <InputAdornment position="start"><Email color="primary"/></InputAdornment>}}/>
+            }
 
             {inputAdornment.isShow && inputAdornment.type === 'end' &&
             <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
-                       InputProps={{endAdornment: <InputAdornment position="end"><Email color="primary"/></InputAdornment>}}
-            />}
+                       InputProps={{endAdornment: <InputAdornment position="end"><Email color="primary"/></InputAdornment>}}/>
+            }
 
             {inputAdornment.isShow && inputAdornment.type === 'password' &&
-            <TextField type={showPassword ? 'text' : 'password'} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
+            <TextField type={showPassword ? 'text' : 'password'} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText}
+                       fullWidth size="small"
                        InputProps={{
                            startAdornment: <InputAdornment position="start"><Lock color="primary"/></InputAdornment>,
                            endAdornment: (
@@ -51,7 +52,13 @@ export default function ALTextField(props: Props) {
                                </InputAdornment>
                            ),
                        }}
-            />}
+            />
+            }
         </div>
     );
 };
+
+// Simple Field : inputAdornment={{'isShow': false}}
+// Start Adornment Field : inputAdornment={{'isShow': true, 'type': 'start'}}
+// End Adornment Field : inputAdornment={{'isShow': true, 'type': 'start'}}
+// Password Field : inputAdornment={{'isShow': true, 'type': 'password'}}
