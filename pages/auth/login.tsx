@@ -33,16 +33,18 @@ export default function Login() {
             <div className="auth-fields">
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <ALTextField name="userName" label="Username or Email *" value={values.userName} error={true} helperText={' '}/>
+                        <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
+                                     inputAdornment={{'isShow': false}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>
-                        <TextField type="text" name="userName" label="Username or Email *" value={values.userName} fullWidth size="small" error={false}
-                                   helperText=" " onChange={handleChange}
-                                   InputProps={{
-                                       startAdornment: <InputAdornment position="start"><Email color="primary"/></InputAdornment>,
-                                   }}
-                        />
+                        <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
+                                     inputAdornment={{'isShow': true, 'position': 'start'}} error={true} helperText={' '}/>
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
+                                     inputAdornment={{'isShow': true, 'position': 'end'}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>
