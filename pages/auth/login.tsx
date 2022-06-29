@@ -33,12 +33,12 @@ export default function Login() {
 
                     <Grid item xs={12}>
                         <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
-                                     inputAdornment={{'isShow': true, 'type': 'start'}} error={true} helperText={' '}/>
+                                     inputAdornment={{'isShow': true, 'type': 'start', 'icon': 'Email'}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>
                         <ALTextField type="text" name="userName" label="Username or Email *" value={values.userName} onChange={handleChange}
-                                     inputAdornment={{'isShow': true, 'type': 'end'}} error={true} helperText={' '}/>
+                                     inputAdornment={{'isShow': true, 'type': 'end', 'icon': 'Email'}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>

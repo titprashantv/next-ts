@@ -59,6 +59,6 @@ export default function ALTextField(props: Props) {
 };
 
 // Simple Field : inputAdornment={{'isShow': false}}
-// Start Adornment Field : inputAdornment={{'isShow': true, 'type': 'start'}}
-// End Adornment Field : inputAdornment={{'isShow': true, 'type': 'start'}}
+// Start Adornment Field : inputAdornment={{'isShow': true, 'type': 'start', 'icon': 'Email'}}
+// End Adornment Field : inputAdornment={{'isShow': true, 'type': 'start', 'icon': 'Email'}}
 // Password Field : inputAdornment={{'isShow': true, 'type': 'password'}}
