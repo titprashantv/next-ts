@@ -10,15 +10,10 @@ export default function Login() {
     const [values, setValues] = useState({
         userName: '',
         passWord: '',
-        showPassword: false,
     });
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValues({...values, [event.target.name]: event.target.value});
-    };
-
-    const handleClickShowPassword = () => {
-        setValues({...values, showPassword: !values.showPassword});
     };
 
     return (
@@ -47,8 +42,8 @@ export default function Login() {
                     </Grid>
 
                     <Grid item xs={12}>
-                        <ALTextField type={values.showPassword ? 'text' : 'password'} name="passWord" label="Password *" value={values.passWord} onChange={handleChange}
-                                     inputAdornment={{'isShow': true, 'type': 'password', 'onClick': handleClickShowPassword, 'showPassword': values.showPassword}} error={true} helperText={' '}/>
+                        <ALTextField type="password" name="passWord" label="Password *" value={values.passWord} onChange={handleChange}
+                                     inputAdornment={{'isShow': true, 'type': 'password'}} error={true} helperText={' '}/>
                     </Grid>
 
                     <Grid item xs={12}>

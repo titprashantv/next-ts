@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from "react";
 import {TextField, InputAdornment, IconButton} from '@mui/material';
 import {Email, Lock, Visibility, VisibilityOff} from '@mui/icons-material';
 
@@ -15,6 +16,12 @@ interface Props {
 
 export default function ALTextField(props: Props) {
     const {type, name, label, value, onChange, inputAdornment, error, helperText} = props;
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleClickShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <div className="al-text-field">
@@ -33,13 +40,13 @@ export default function ALTextField(props: Props) {
             />}
 
             {inputAdornment.isShow && inputAdornment.type === 'password' &&
-            <TextField type={type} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
+            <TextField type={showPassword ? 'text' : 'password'} name={name} label={label} value={value} onChange={onChange} error={error} helperText={helperText} fullWidth size="small"
                        InputProps={{
                            startAdornment: <InputAdornment position="start"><Lock color="primary"/></InputAdornment>,
                            endAdornment: (
                                <InputAdornment position="end">
-                                   <IconButton onClick={inputAdornment.onClick}>
-                                       {inputAdornment.showPassword ? <VisibilityOff color="action"/> : <Visibility color="action"/>}
+                                   <IconButton onClick={handleClickShowPassword}>
+                                       {showPassword ? <VisibilityOff color="action"/> : <Visibility color="action"/>}
                                    </IconButton>
                                </InputAdornment>
                            ),
