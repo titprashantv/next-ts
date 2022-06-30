@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import {Box, Typography} from '@mui/material';
-import theme from "../src/theme";
+import theme from "../theme";
 import {FlutterDash} from "@mui/icons-material";
 
 interface Props {

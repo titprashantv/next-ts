@@ -1,12 +1,9 @@
 import * as React from 'react';
 import {useState} from "react";
-//import theme from "../../src/theme";
-import theme from "/src/theme";
+import theme from 'theme';
 import {Typography, Grid, Button} from '@mui/material';
-import AuthLayout from "/components/AuthLayout";
-//import AuthLayout from "../../components/AuthLayout";
-//import ALTextField from "../../components/fields/ALTextField";
-import ALTextField from "/components/fields/ALTextField";
+import AuthLayout from "components/AuthLayout";
+import ALTextField from "components/fields/ALTextField";
 
 export default function Login() {
 
@@ -20,7 +17,7 @@ export default function Login() {
     };
 
     const handleSubmit = () => {
-      console.log('values',values);
+        console.log('values', values);
     };
 
     return (
