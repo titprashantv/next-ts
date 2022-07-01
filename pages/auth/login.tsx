@@ -2,8 +2,8 @@ import * as React from 'react';
 import {useState} from "react";
 import theme from 'theme';
 import {Typography, Grid, Button} from '@mui/material';
-import AuthLayout from "components/AuthLayout";
-import ALTextField from "components/fields/ALTextField";
+import AuthLayout from "../../components/AuthLayout";
+import ALTextField from "../../components/fields/ALTextField";
 
 export default function Login() {
 
