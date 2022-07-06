@@ -3,7 +3,7 @@ import {styled, AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, Lis
 import {MoveToInbox, Mail, FlutterDash, Menu} from '@mui/icons-material';
 import MainMenu from "./MainMenu";
 import ActiveLink from "./ActiveLink";
-import theme from "../../src/theme";
+import theme from "theme";
 
 const headerHeight = 64;
 const drawerWidth = 225;

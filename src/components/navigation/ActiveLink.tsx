@@ -4,7 +4,7 @@ import {useRouter} from 'next/router'
 import Link from 'next/link'
 import {ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import NavIcon from "./NavIcon";
-import theme from "../../src/theme";
+import theme from "theme";
 
 interface Props {
     menuName: string;

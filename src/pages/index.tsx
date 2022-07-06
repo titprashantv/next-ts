@@ -1,22 +1,22 @@
 import * as React from 'react';
 import {Grid, Paper} from '@mui/material';
-import Layout from "../components/Layout";
-import VerticalBarChart from "../components/chart/VerticalBarChart";
-import HorizontalBarChart from "../components/chart/HorizontalBarChart";
-import StackedBarChart from "../components/chart/StackedBarChart";
-import GroupedBarChart from "../components/chart/GroupedBarChart";
-import LineChart from "../components/chart/LineChart";
-import MultiaxisLineChart from "../components/chart/MultiaxisLineChart";
-import PieChart from "../components/chart/PieChart";
-import DoughnutChart from "../components/chart/DoughnutChart";
-import PolarAreaChart from "../components/chart/PolarAreaChart";
-import RadarChart from "../components/chart/RadarChart";
-import ScatterChart from "../components/chart/ScatterChart";
-import BubbleChart from "../components/chart/BubbleChart";
-import MultitypeChart from "../components/chart/MultitypeChart";
-import EventChart from "../components/chart/EventChart";
-import RefChart from "../components/chart/RefChart";
-import GradientChart from "../components/chart/GradientChart";
+import Layout from "components/Layout";
+import VerticalBarChart from "components/chart/VerticalBarChart";
+import HorizontalBarChart from "components/chart/HorizontalBarChart";
+import StackedBarChart from "components/chart/StackedBarChart";
+import GroupedBarChart from "components/chart/GroupedBarChart";
+import LineChart from "components/chart/LineChart";
+import MultiaxisLineChart from "components/chart/MultiaxisLineChart";
+import PieChart from "components/chart/PieChart";
+import DoughnutChart from "components/chart/DoughnutChart";
+import PolarAreaChart from "components/chart/PolarAreaChart";
+import RadarChart from "components/chart/RadarChart";
+import ScatterChart from "components/chart/ScatterChart";
+import BubbleChart from "components/chart/BubbleChart";
+import MultitypeChart from "components/chart/MultitypeChart";
+import EventChart from "components/chart/EventChart";
+import RefChart from "components/chart/RefChart";
+import GradientChart from "components/chart/GradientChart";
 
 export default function Home() {
     return (

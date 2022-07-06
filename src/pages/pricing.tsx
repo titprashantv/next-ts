@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {Typography} from '@mui/material';
-import Layout from "../components/Layout";
+import Layout from "components/Layout";
 
-export default function Products() {
+export default function Pricing() {
     return (
-        <Layout pageTitle="Products">
+        <Layout pageTitle="Pricing">
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac tincidunt.
                 Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed vulputate odio.
